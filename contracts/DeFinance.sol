@@ -102,12 +102,9 @@ contract DeFinance {
                                                             false
                                                         );
 
-    if (getUserInfo().role == CustomerType.SELLER) {
-      payable(admin).transfer(msg.value);
-    } else {
+    
       payable(admin).transfer(POINT_TWO_ETHER);
       payable(seller).transfer(msg.value - POINT_TWO_ETHER);
-    }
     userSubscriptionsMap[msg.sender].push(newUserSubscription);
   }
 
